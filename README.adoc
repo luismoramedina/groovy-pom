@@ -1,0 +1,19 @@
+= maven polyglot groovy simple project
+
+simple project to test the polyglot maven extension
+
+== Steps
+
+* curl 'https://start.spring.io/starter.zip?type=maven-project&bootVersion=1.4.1.RELEASE&baseDir=sample&groupId=sample&artifactId=sample&packageName=com.example&javaVersion=1.8&language=java&style=web'
+
+* unzip sample.zip
+
+* cd sample
+
+* mvn io.takari.polyglot:polyglot-translate-plugin:translate -Dinput=pom.xml -Doutput=pom.groovy
+
+* echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?><extensions><extension><groupId>io.takari.polyglot</groupId><artifactId>polyglot-groovy</artifactId><version>0.1.10</version></extension></extensions>" > .mvn/extensions.xml
+
+NOTE: change relativePath {} with relativePath ''
+
+* mvn spring-boot:run
