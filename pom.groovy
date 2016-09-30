@@ -28,6 +28,9 @@ project {
     }
   }
   build {
+    $execute(id: 'hello', phase: 'clean') {
+      println "HELLO FROM POM!!! ALL IS CLEAN NOW"
+    }
     plugins {
       plugin {
         groupId 'org.springframework.boot'
